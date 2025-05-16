@@ -1,5 +1,5 @@
 import { serve } from "bun";
-import homepage from "./index.html";
+import homepage from "./src/index.html";
 
 const server = serve({
   routes: {

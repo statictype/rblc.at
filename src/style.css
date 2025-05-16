@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 15px;
+}
+
+body {
+	margin: 0;
+	color:darkslategray;
+	background-color: #1B1717;
+	font-family: Arial, Helvetica, sans-serif, sans-serif;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cat {
+	max-height: 70%;
+	width: auto;
+}
