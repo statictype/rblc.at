@@ -75,4 +75,16 @@ tl.fromTo(
     { scaleX: 0, transformOrigin: "left bottom" },
     { scaleX: 1, duration: 1, stagger: 0.2, ease: "elastic.out(1,0.3)" },
     "-=1.6"
+  )
+  .fromTo(
+    "#eye_left, #eye_right",
+    { scaleY: 0, transformOrigin: "center" },
+    {
+      scaleY: 1,
+      duration: 1,
+      ease: "expo.out",
+      repeat: -1,
+      repeatDelay: 10,
+    },
+    "-=0.4"
   );

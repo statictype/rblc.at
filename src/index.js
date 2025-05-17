@@ -16,4 +16,11 @@ tl.fromTo("#deco_triangle", { scaleY: 0, transformOrigin: "left bottom" }, { sca
     .fromTo("#eye_left, #eye_right", { scaleY: 0, transformOrigin: "center" }, { scaleY: 1, duration: 1, ease: "expo.out" }, "-=0.8")
     .fromTo("#mouth_left, #mouth_right", { drawSVG: 0 }, { drawSVG: "100%", duration: 0.5 }, "-=1")
     .fromTo("#whiskers_left path", { scaleX: 0, transformOrigin: "right bottom" }, { scaleX: 1, duration: 1, stagger: 0.2, ease: "elastic.out(1,0.3)" }, "-=0.8")
-    .fromTo("#whiskers_right path", { scaleX: 0, transformOrigin: "left bottom" }, { scaleX: 1, duration: 1, stagger: 0.2, ease: "elastic.out(1,0.3)" }, "-=1.6");
+    .fromTo("#whiskers_right path", { scaleX: 0, transformOrigin: "left bottom" }, { scaleX: 1, duration: 1, stagger: 0.2, ease: "elastic.out(1,0.3)" }, "-=1.6")
+    .fromTo("#eye_left, #eye_right", { scaleY: 0, transformOrigin: "center" }, {
+    scaleY: 1,
+    duration: 1,
+    ease: "expo.out",
+    repeat: -1,
+    repeatDelay: 10,
+}, "-=0.4");
