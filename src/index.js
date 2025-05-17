@@ -2,14 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var gsap_1 = require("gsap");
 var DrawSVGPlugin_1 = require("gsap/DrawSVGPlugin");
-var CustomEase_1 = require("gsap/CustomEase");
-var EasePack_1 = require("gsap/EasePack");
-gsap_1.gsap.registerPlugin(DrawSVGPlugin_1.DrawSVGPlugin, EasePack_1.RoughEase, EasePack_1.ExpoScaleEase, CustomEase_1.CustomEase);
-var tl = gsap_1.gsap.timeline({
-    onComplete: function () {
-        console.log("finished");
-    },
-});
+gsap_1.gsap.registerPlugin(DrawSVGPlugin_1.DrawSVGPlugin);
+var tl = gsap_1.gsap.timeline({});
 tl.fromTo("#deco_triangle", { scaleY: 0, transformOrigin: "left bottom" }, { scaleY: 1, duration: 1, ease: "power4.in" })
     .fromTo("#deco_ellipse_small", { scale: 0, transformOrigin: "center" }, { scale: 1, duration: 0.5 })
     .fromTo("[id^='deco_line']", { scaleY: 0, transformOrigin: "top center" }, { scaleY: 1, duration: 0.5, stagger: 0.2, ease: "power4.in" }, "-=1.5")
@@ -23,11 +17,3 @@ tl.fromTo("#deco_triangle", { scaleY: 0, transformOrigin: "left bottom" }, { sca
     .fromTo("#mouth_left, #mouth_right", { drawSVG: 0 }, { drawSVG: "100%", duration: 0.5 }, "-=1")
     .fromTo("#whiskers_left path", { scaleX: 0, transformOrigin: "right bottom" }, { scaleX: 1, duration: 1, stagger: 0.2, ease: "elastic.out(1,0.3)" }, "-=0.8")
     .fromTo("#whiskers_right path", { scaleX: 0, transformOrigin: "left bottom" }, { scaleX: 1, duration: 1, stagger: 0.2, ease: "elastic.out(1,0.3)" }, "-=1.6");
-var canvas = document.querySelector(".cat");
-canvas.onclick = function (e) {
-    var target = e.target;
-    var rect = target.getBoundingClientRect();
-    var x = e.clientX - rect.left;
-    var y = e.clientY - rect.top;
-    console.log(x, y);
-};
