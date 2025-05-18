@@ -2,6 +2,9 @@ import { gsap } from "gsap";
 
 type Coords = { x: number; y: number };
 
+let center = { x: 0, y: 0 };
+const { leftEye, rightEye, leftPupil, rightPupil, anchor } = initDOM();
+
 function initDOM() {
   const leftEye = document.querySelector<SVGElement>("#eye_left");
   const rightEye = document.querySelector<SVGElement>("#eye_right");
@@ -13,13 +16,6 @@ function initDOM() {
     throw new Error(`Could not find selector in document!`);
 
   return { leftEye, rightEye, leftPupil, rightPupil, anchor };
-}
-
-function getCenterCoords(anchor: Element) {
-  const rect = anchor.getBoundingClientRect();
-  const x = rect.left + rect.width / 2;
-  const y = rect.top + rect.height / 2;
-  return { x, y };
 }
 
 function getDistanceToCenter(center: Coords, mouse: Coords) {
@@ -48,13 +44,17 @@ function createEye(eyeElement: SVGElement, pupilElement: SVGElement) {
   return { follow };
 }
 
+function updateCenter() {
+  const rect = anchor.getBoundingClientRect();
+  center.x = rect.left + rect.width / 2;
+  center.y = rect.top + rect.height / 2;
+}
+
 function startEyesFollow() {
-  const { leftEye, rightEye, leftPupil, rightPupil, anchor } = initDOM();
+  updateCenter();
 
   const left = createEye(leftEye, leftPupil);
   const right = createEye(rightEye, rightPupil);
-
-  const center = getCenterCoords(anchor);
 
   document.addEventListener("mousemove", (e) => {
     const { x, y } = getDistanceToCenter(center, {
@@ -66,4 +66,4 @@ function startEyesFollow() {
   });
 }
 
-export { startEyesFollow };
+export { startEyesFollow, updateCenter };

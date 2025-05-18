@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.startEyesFollow = startEyesFollow;
+exports.updateCenter = updateCenter;
 var gsap_1 = require("gsap");
+var center = { x: 0, y: 0 };
+var _a = initDOM(), leftEye = _a.leftEye, rightEye = _a.rightEye, leftPupil = _a.leftPupil, rightPupil = _a.rightPupil, anchor = _a.anchor;
 function initDOM() {
     var leftEye = document.querySelector("#eye_left");
     var rightEye = document.querySelector("#eye_right");
@@ -11,12 +14,6 @@ function initDOM() {
     if (!leftEye || !rightEye || !leftPupil || !rightPupil || !anchor)
         throw new Error("Could not find selector in document!");
     return { leftEye: leftEye, rightEye: rightEye, leftPupil: leftPupil, rightPupil: rightPupil, anchor: anchor };
-}
-function getCenterCoords(anchor) {
-    var rect = anchor.getBoundingClientRect();
-    var x = rect.left + rect.width / 2;
-    var y = rect.top + rect.height / 2;
-    return { x: x, y: y };
 }
 function getDistanceToCenter(center, mouse) {
     return { x: mouse.x - center.x, y: mouse.y - center.y };
@@ -33,11 +30,15 @@ function createEye(eyeElement, pupilElement) {
     }
     return { follow: follow };
 }
+function updateCenter() {
+    var rect = anchor.getBoundingClientRect();
+    center.x = rect.left + rect.width / 2;
+    center.y = rect.top + rect.height / 2;
+}
 function startEyesFollow() {
-    var _a = initDOM(), leftEye = _a.leftEye, rightEye = _a.rightEye, leftPupil = _a.leftPupil, rightPupil = _a.rightPupil, anchor = _a.anchor;
+    updateCenter();
     var left = createEye(leftEye, leftPupil);
     var right = createEye(rightEye, rightPupil);
-    var center = getCenterCoords(anchor);
     document.addEventListener("mousemove", function (e) {
         var _a = getDistanceToCenter(center, {
             x: e.clientX,

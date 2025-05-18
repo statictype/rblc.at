@@ -75,4 +75,7 @@ window.addEventListener("load", function () {
 });
 window.addEventListener("DOMContentLoaded", function () {
     (0, eyes_folllow_1.startEyesFollow)();
+    window.addEventListener("resize", function () {
+        (0, eyes_folllow_1.updateCenter)();
+    });
 });

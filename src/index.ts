@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { startEyesFollow } from "./eyes-folllow";
+import { startEyesFollow, updateCenter } from "./eyes-folllow";
 
 gsap.registerPlugin(DrawSVGPlugin);
 
@@ -114,4 +114,7 @@ window.addEventListener("load", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   startEyesFollow();
+  window.addEventListener("resize", () => {
+    updateCenter();
+  });
 });
