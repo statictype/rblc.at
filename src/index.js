@@ -2,10 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var gsap_1 = require("gsap");
 var DrawSVGPlugin_1 = require("gsap/DrawSVGPlugin");
+var eyes_folllow_1 = require("./eyes-folllow");
 gsap_1.gsap.registerPlugin(DrawSVGPlugin_1.DrawSVGPlugin);
-var tl = gsap_1.gsap.timeline({ defaults: { opacity: 0 } });
+var tl = gsap_1.gsap.timeline();
 function init() {
-    tl.from(".cat", { autoAlpha: 0 })
+    tl.from(".cat", { opacity: 0, autoAlpha: 0 })
         .from("#deco_triangle", {
         scaleY: 0,
         transformOrigin: "left bottom",
@@ -69,6 +70,9 @@ function init() {
         ease: "elastic.out(1,0.3)",
     }, "-=1.6");
 }
-window.addEventListener("load", function (event) {
+window.addEventListener("load", function () {
     init();
+});
+window.addEventListener("DOMContentLoaded", function () {
+    (0, eyes_folllow_1.startEyesFollow)();
 });

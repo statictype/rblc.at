@@ -1,12 +1,13 @@
 import { gsap } from "gsap";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { startEyesFollow } from "./eyes-folllow";
 
 gsap.registerPlugin(DrawSVGPlugin);
 
-let tl = gsap.timeline({ defaults: { opacity: 0 } });
+let tl = gsap.timeline();
 
 function init() {
-  tl.from(".cat", { autoAlpha: 0 })
+  tl.from(".cat", { opacity: 0, autoAlpha: 0 })
     .from("#deco_triangle", {
       scaleY: 0,
       transformOrigin: "left bottom",
@@ -107,6 +108,10 @@ function init() {
     );
 }
 
-window.addEventListener("load", function (event) {
+window.addEventListener("load", () => {
   init();
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  startEyesFollow();
 });
