@@ -4,14 +4,15 @@ import { startEyesFollow, updateCenter } from "./eyes-folllow";
 
 gsap.registerPlugin(DrawSVGPlugin);
 
-let tl = gsap.timeline();
+let tl = gsap.timeline({
+  defaults: { duration: 1, ease: "expo.out" },
+});
 
 function init() {
   tl.from(".cat", { opacity: 0, autoAlpha: 0 })
     .from("#deco_triangle", {
       scaleY: 0,
       transformOrigin: "left bottom",
-      duration: 1,
       ease: "power4.in",
     })
     .from("#deco_ellipse_small", {
@@ -30,18 +31,12 @@ function init() {
       },
       "-=1.5"
     )
-    .from(
-      "#deco_ellipse_big",
-      { y: -400, duration: 1, ease: "elastic.out(1,0.3)" },
-      "-=0.5"
-    )
+    .from("#deco_ellipse_big", { y: -400, ease: "elastic.out(1,0.3)" }, "-=0.5")
     .from(
       "#ear_left",
       {
         scaleY: 0,
         transformOrigin: "left bottom",
-        duration: 1,
-        ease: "expo.out",
       },
       "-=0.8"
     )
@@ -50,12 +45,10 @@ function init() {
       {
         scaleY: 0,
         transformOrigin: "right bottom",
-        duration: 1,
-        ease: "expo.out",
       },
       "-=1"
     )
-    .from("#neck", { y: 200, duration: 1, ease: "expo.out" }, "-=1")
+    .from("#neck", { y: 200, ease: "expo.out" }, "-=1")
     .from(
       "#vesica",
       { scaleY: 0, transformOrigin: "center", duration: 0.5, ease: "expo.out" },
@@ -76,8 +69,6 @@ function init() {
       {
         scaleY: 0,
         transformOrigin: "center",
-        duration: 1,
-        ease: "expo.out",
         repeat: -1,
         repeatDelay: 5,
       },
@@ -89,7 +80,6 @@ function init() {
       {
         scaleX: 0,
         transformOrigin: "right bottom",
-        duration: 1,
         stagger: 0.2,
         ease: "elastic.out(1,0.3)",
       },
@@ -100,7 +90,6 @@ function init() {
       {
         scaleX: 0,
         transformOrigin: "left bottom",
-        duration: 1,
         stagger: 0.2,
         ease: "elastic.out(1,0.3)",
       },

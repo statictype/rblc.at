@@ -4,13 +4,14 @@ var gsap_1 = require("gsap");
 var DrawSVGPlugin_1 = require("gsap/DrawSVGPlugin");
 var eyes_folllow_1 = require("./eyes-folllow");
 gsap_1.gsap.registerPlugin(DrawSVGPlugin_1.DrawSVGPlugin);
-var tl = gsap_1.gsap.timeline();
+var tl = gsap_1.gsap.timeline({
+    defaults: { duration: 1, ease: "expo.out" },
+});
 function init() {
     tl.from(".cat", { opacity: 0, autoAlpha: 0 })
         .from("#deco_triangle", {
         scaleY: 0,
         transformOrigin: "left bottom",
-        duration: 1,
         ease: "power4.in",
     })
         .from("#deco_ellipse_small", {
@@ -25,20 +26,16 @@ function init() {
         stagger: 0.2,
         ease: "power4.in",
     }, "-=1.5")
-        .from("#deco_ellipse_big", { y: -400, duration: 1, ease: "elastic.out(1,0.3)" }, "-=0.5")
+        .from("#deco_ellipse_big", { y: -400, ease: "elastic.out(1,0.3)" }, "-=0.5")
         .from("#ear_left", {
         scaleY: 0,
         transformOrigin: "left bottom",
-        duration: 1,
-        ease: "expo.out",
     }, "-=0.8")
         .from("#ear_right", {
         scaleY: 0,
         transformOrigin: "right bottom",
-        duration: 1,
-        ease: "expo.out",
     }, "-=1")
-        .from("#neck", { y: 200, duration: 1, ease: "expo.out" }, "-=1")
+        .from("#neck", { y: 200, ease: "expo.out" }, "-=1")
         .from("#vesica", { scaleY: 0, transformOrigin: "center", duration: 0.5, ease: "expo.out" }, "-=1")
         .from("#nose", {
         scale: 0,
@@ -49,8 +46,6 @@ function init() {
         .from("#eye_left, #eye_right", {
         scaleY: 0,
         transformOrigin: "center",
-        duration: 1,
-        ease: "expo.out",
         repeat: -1,
         repeatDelay: 5,
     }, "-=0.8")
@@ -58,14 +53,12 @@ function init() {
         .from("#whiskers_left path", {
         scaleX: 0,
         transformOrigin: "right bottom",
-        duration: 1,
         stagger: 0.2,
         ease: "elastic.out(1,0.3)",
     }, "-=0.8")
         .from("#whiskers_right path", {
         scaleX: 0,
         transformOrigin: "left bottom",
-        duration: 1,
         stagger: 0.2,
         ease: "elastic.out(1,0.3)",
     }, "-=1.6");
