@@ -16,10 +16,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: "20"
+          bun-version: 1.2.13
+      - name: Build project
+        run: bun run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
