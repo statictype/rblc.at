@@ -47,10 +47,10 @@ function startTimeline() {
       },
       "-=1"
     )
-    .from("#neck", { y: 200, ease: "expo.out" }, "-=1")
+    .from("#neck", { y: 200 }, "-=1")
     .from(
       "#vesica",
-      { scaleY: 0, transformOrigin: "center", duration: 0.5, ease: "expo.out" },
+      { scaleY: 0, transformOrigin: "center", duration: 0.5 },
       "-=1"
     )
     .from(
@@ -73,7 +73,7 @@ function startTimeline() {
       },
       "-=0.8"
     )
-    .from("#mouth_left, #mouth_right", { drawSVG: 0, duration: 0.5 }, "-=1")
+    .from("#mouth_left, #mouth_right", { drawSVG: 0, duration: 1 }, "-=1")
     .from(
       "#whiskers_left path",
       {
@@ -81,8 +81,9 @@ function startTimeline() {
         transformOrigin: "right bottom",
         stagger: 0.2,
         ease: "elastic.out(1,0.3)",
+        duration: 2,
       },
-      "-=0.8"
+      "-=1"
     )
     .from(
       "#whiskers_right path",
@@ -91,8 +92,9 @@ function startTimeline() {
         transformOrigin: "left bottom",
         stagger: 0.2,
         ease: "elastic.out(1,0.3)",
+        duration: 2,
       },
-      "-=1.6"
+      "-=2.6"
     );
 }
 

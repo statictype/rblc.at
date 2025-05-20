@@ -25,7 +25,7 @@ function createEye(pupilElement: SVGElement) {
     gsap.to(pupilElement, {
       duration: 0.1,
       xPercent: gsap.utils.clamp(-300, 300, x / 4),
-      yPercent: gsap.utils.clamp(-75, 125, y / 4) / 2,
+      yPercent: gsap.utils.clamp(-75, 125, y / 2) / 2,
     });
   }
 
