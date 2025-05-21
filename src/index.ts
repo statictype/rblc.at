@@ -1,5 +1,6 @@
-import { startEyesFollow, updateCenter } from "./eyes-folllow";
+import { startEyesFollow, updateCenter, resetEyes } from "./eyes-folllow";
 import { startTimeline } from "./timeline";
+import { debounce } from "./utils";
 
 window.addEventListener("load", () => {
   startTimeline();
@@ -7,7 +8,15 @@ window.addEventListener("load", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   startEyesFollow();
-  window.addEventListener("resize", () => {
-    updateCenter();
-  });
 });
+
+window.addEventListener("blur", () => {
+  resetEyes();
+});
+
+window.addEventListener(
+  "resize",
+  debounce(() => {
+    updateCenter();
+  }, 300)
+);

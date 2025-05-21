@@ -54,4 +54,19 @@ function startEyesFollow() {
   });
 }
 
-export { startEyesFollow, updateCenter };
+const tl = gsap.timeline();
+function resetEyes() {
+  tl.to(leftPupil, {
+    duration: 0.5,
+    xPercent: 0,
+    yPercent: 0,
+    ease: "power4.inOut",
+  });
+  tl.to(
+    rightPupil,
+    { duration: 0.5, xPercent: 0, yPercent: 0, ease: "power4.inOut" },
+    "-=0.5"
+  );
+}
+
+export { startEyesFollow, updateCenter, resetEyes };
