@@ -4,7 +4,7 @@ import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 gsap.registerPlugin(DrawSVGPlugin);
 
 let tl = gsap.timeline({
-  defaults: { duration: 1, ease: "expo.out" },
+  defaults: { duration: 1, ease: "expo.out", opacity: 0 },
 });
 
 function startTimeline() {
