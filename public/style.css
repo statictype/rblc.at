@@ -94,30 +94,30 @@ main {
 @media (min-width: 1025px) {
   .name {
     position: fixed;
-    top: 5%;
-    left: 5%;
+    top: 20px;
+    left: 40px;
     font-size: 1.2em;
   }
 
   .links {
     position: fixed;
-    bottom: 5%;
-    right: 5%;
+    bottom: 32px;
+    right: 40px;
   }
   .description {
     position: fixed;
-    bottom: 5%;
-    left: 5%;
-    max-width: 40%;
+    bottom: 20px;
+    left: 40px;
+    max-width: 370px;
   }
   main {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 40px;
   }
   .row {
-    padding: 7%;
+    padding: 0;
   }
   .cat {
-    max-height: 70vh;
+    max-height: 50vh;
   }
 }
