@@ -95,7 +95,8 @@ function startTimeline() {
         duration: 2,
       },
       "-=2.6"
-    );
+    )
+    .from(".info", { duration: 2, ease: "power4.inOut" }, "-=3.4");
 }
 
 export { startTimeline };
