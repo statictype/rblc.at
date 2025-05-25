@@ -8,6 +8,12 @@
   font-size: 15px;
 }
 
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   margin: 0;
   color: darkslategray;
@@ -18,11 +24,16 @@ body {
 }
 
 main {
-  height: 100vh;
+  height: 100svh;
   display: grid;
   grid-template-rows: 1fr min-content;
   grid-template-columns: none;
   align-items: center;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 .row {
@@ -52,13 +63,12 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .links img {
-  width: 32px;
+  width: 42px;
   height: auto;
-  margin-top: 1.4em;
 }
 
 .info {
@@ -76,13 +86,19 @@ main {
 
 .name {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.75em;
+}
+
+.description {
+  margin-bottom: 3em;
 }
 
 @media (orientation: landscape) {
   main {
     grid-template-rows: none;
     grid-template-columns: minmax(100px, 40%) 1fr;
+    height: 100vh;
   }
   .cat {
     max-height: 80vh;
@@ -98,30 +114,42 @@ main {
 @media (min-width: 1025px) {
   .name {
     position: fixed;
-    top: 20px;
+    top: 40px;
     left: 40px;
     font-size: 1.2em;
+    letter-spacing: 0.1em;
   }
 
   .links {
     position: fixed;
-    bottom: 32px;
+    bottom: 40px;
     right: 40px;
+    gap: 16px;
   }
   .description {
     position: fixed;
-    bottom: 20px;
+    bottom: 40px;
     left: 40px;
-    max-width: 370px;
+    max-width: 400px;
+    margin-bottom: 0;
   }
   main {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 40px;
+    grid-template-rows: 1fr;
   }
   .row {
     padding: 0;
   }
   .cat {
     max-height: 50vh;
+  }
+  .links img {
+    width: 32px;
+  }
+}
+
+@media (min-width: 1025px) and (orientation: landscape) {
+  main {
+    height: 100svh;
   }
 }

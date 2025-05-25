@@ -3,17 +3,21 @@ import { gsap } from "gsap";
 type Coords = { x: number; y: number };
 
 let center = { x: 0, y: 0 };
-const { leftPupil, rightPupil, anchor } = initDOM();
+const { leftPupil, rightPupil, anchor, eyeWidth, pupilWidth } = initDOM();
 
 function initDOM() {
   const leftPupil = document.querySelector<SVGElement>("#pupil_left");
   const rightPupil = document.querySelector<SVGElement>("#pupil_right");
   const anchor = document.getElementById("cat");
+  const eye = document.querySelector<SVGElement>("#eye_left")!;
 
   if (!leftPupil || !rightPupil || !anchor)
     throw new Error(`Could not find selector in document!`);
 
-  return { leftPupil, rightPupil, anchor };
+  const pupilWidth = leftPupil.getBoundingClientRect().width;
+  const eyeWidth = eye.getBoundingClientRect().width;
+
+  return { leftPupil, rightPupil, anchor, eyeWidth, pupilWidth };
 }
 
 function getDistanceToCenter(center: Coords, mouse: Coords) {
@@ -21,11 +25,12 @@ function getDistanceToCenter(center: Coords, mouse: Coords) {
 }
 
 function createEye(pupilElement: SVGElement) {
+  const xMax = eyeWidth + pupilWidth;
   function follow(x: number, y: number) {
     gsap.to(pupilElement, {
       duration: 0.1,
-      xPercent: gsap.utils.clamp(-300, 300, x / 4),
-      yPercent: gsap.utils.clamp(-75, 125, y / 2) / 2,
+      xPercent: gsap.utils.clamp(-xMax, xMax, x / 4),
+      yPercent: gsap.utils.clamp(-75, 125, y) / 2,
     });
   }
 
