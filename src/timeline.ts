@@ -8,7 +8,7 @@ let tl = gsap.timeline({
 });
 
 function startTimeline() {
-  tl.from(".cat", { opacity: 0, autoAlpha: 0 })
+  tl.from(".cat", { autoAlpha: 0 })
     .from("#deco_triangle", {
       scaleY: 0,
       transformOrigin: "left bottom",
@@ -96,7 +96,11 @@ function startTimeline() {
       },
       "-=2.6"
     )
-    .from(".info", { duration: 2, ease: "power4.inOut" }, "-=3.4");
+    .from(
+      ".info",
+      { duration: 2, ease: "power4.inOut", autoAlpha: 0 },
+      "-=3.4"
+    );
 }
 
 export { startTimeline };

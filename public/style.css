@@ -78,6 +78,7 @@ p {
   font-size: 1.4em;
   letter-spacing: 0.05em;
   flex-direction: column;
+  visibility: hidden;
 }
 
 .right {
