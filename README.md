@@ -8,7 +8,7 @@ This is the landing page for my personal website.
 
 - **TypeScript**
 - **GSAP** – for performant animations
-- **Bun** – as the package manager, bundler and dev server
+- **Bun** – as the runtime, package manager, bundler and dev server
 
 ## 🚧 Coming Soon
 
