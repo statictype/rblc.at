@@ -1,0 +1,50 @@
+<svg width="425" height="624" viewBox="0 0 425 624" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="cat">
+<path id="ear_left" d="M28.5042 0V207.811H153.344L28.5042 0Z" fill="#FA5256"/>
+<path id="ear_right" d="M394.958 0V207.811H270.118L394.958 0Z" fill="#FA5256"/>
+<path id="eye_left" d="M179.849 283.484H37.7231C47.5823 298.849 62.6912 329.963 111.091 329.963C154.497 329.963 171.526 299.105 179.849 283.484Z" fill="#F1BB26"/>
+<path id="eye_right" d="M383.819 283.484H241.693C251.552 298.849 266.661 329.963 315.061 329.963C358.467 329.963 375.496 299.105 383.819 283.484Z" fill="#F1BB26"/>
+<ellipse id="pupil_right" cx="313.14" cy="290.014" rx="9.98723" ry="27.2728" fill="#1B1717"/>
+<ellipse id="pupil_left" cx="108.786" cy="290.014" rx="9.98723" ry="27.2728" fill="#1B1717"/>
+<ellipse id="deco_ellipse_small" cx="211.347" cy="261.204" rx="11.9078" ry="11.5237" fill="#F1BB26"/>
+<ellipse id="deco_ellipse_big" cx="211.731" cy="143.278" rx="23.0474" ry="23.4316" fill="#CD6A9D"/>
+<path id="deco_triangle" d="M220.182 275.417H203.281L212.115 341.871L220.182 275.417Z" fill="#FA6E2C"/>
+<rect id="deco_line_1" x="207.89" y="46.0948" width="7.68248" height="65.3011" fill="#FA6E2C"/>
+<rect id="deco_line_2" x="207.89" y="34.5711" width="7.68248" height="7.68248" fill="#FA6E2C"/>
+<rect id="deco_line_3" x="207.89" y="19.2062" width="7.68248" height="8.45073" fill="#FA6E2C"/>
+<rect id="deco_line_4" x="207.89" y="1.5365" width="7.68248" height="13.0602" fill="#FA6E2C"/>
+<path id="vesica" d="M211.732 352.626C270.198 352.626 320.925 379.749 346.175 419.464C320.925 459.178 270.198 486.301 211.732 486.301C153.266 486.301 102.538 459.178 77.2878 419.464C102.538 379.749 153.266 352.626 211.732 352.626Z" fill="#4178D1"/>
+<g id="mouth">
+<path id="mouth_left" d="M210.963 373.369V399.873C210.323 408.196 202.512 423.459 176.392 417.927" stroke="#1C1717" stroke-width="8" stroke-linecap="round"/>
+<path id="mouth_right" d="M211.731 374.905V401.41C212.372 409.733 220.182 424.995 246.302 419.464" stroke="#1C1717" stroke-width="8" stroke-linecap="round"/>
+</g>
+<g id="nose" filter="url(#filter0_d_23_2)">
+<path d="M211.601 352.626C218.475 352.626 225.243 353 231.874 353.727L211.6 379.898L190.989 353.766C197.729 353.015 204.61 352.626 211.601 352.626Z" fill="#FA6E2C"/>
+</g>
+<path id="neck" d="M303.537 503.971H118.389C132.602 543.664 165.253 623.049 210.963 623.049C252.065 623.049 289.325 543.664 303.537 503.971Z" fill="#FA5256"/>
+<g id="whiskers_right">
+<path id="Line 1" d="M267.813 354.931H365.38" stroke="#FA6E2C" stroke-width="4" stroke-linecap="round"/>
+<path id="Line 2" d="M265.509 368.759H379.978" stroke="#FA6E2C" stroke-width="4" stroke-linecap="round"/>
+<path id="Line 3" d="M265.509 386.429L422.999 387.197" stroke="#FA6E2C" stroke-width="4" stroke-linecap="round"/>
+<path id="Line 4" d="M261.667 399.489H290.092" stroke="#FA6E2C" stroke-width="4" stroke-linecap="round"/>
+</g>
+<g id="whiskers_left">
+<path id="Line 1_2" d="M157.186 354.931H59.6185" stroke="#FA6E2C" stroke-width="4" stroke-linecap="round"/>
+<path id="Line 2_2" d="M159.491 368.759H45.0217" stroke="#FA6E2C" stroke-width="4" stroke-linecap="round"/>
+<path id="Line 3_2" d="M159.491 386.429L1.99982 387.197" stroke="#FA6E2C" stroke-width="4" stroke-linecap="round"/>
+<path id="Line 4_2" d="M163.332 399.489H134.906" stroke="#FA6E2C" stroke-width="4" stroke-linecap="round"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_23_2" x="186.989" y="352.626" width="48.8848" height="35.2725" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_23_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_23_2" result="shape"/>
+</filter>
+</defs>
+</svg>
