@@ -15,14 +15,20 @@
     <script src="dist/index.js" type="module"></script>
   </head>
   <body>
-    <main>
+    <main id="main">
       <div class="cat row">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="cat_svg"
           fill="none"
           viewBox="0 0 552 811"
+          role="img"
+          aria-labelledby="catTitle catDesc"
         >
+          <title id="catTitle">Cat illustration</title>
+          <desc id="catDesc">
+            A stylized cat with red ears and yellow eyes.
+          </desc>
           <g id="cat">
             <path id="ear_left" fill="#FA5256" d="M36.5 0v270.5H199L36.5 0Z" />
             <path
@@ -137,7 +143,7 @@
           </g>
         </svg>
       </div>
-      <div class="info row">
+      <section class="info row">
         <div class="left"><p class="name">Andreea Eftene</p></div>
 
         <div class="right">
@@ -147,21 +153,27 @@
           </p>
           <ul class="links">
             <li>
-              <a href="https://github.com/statictype"
-                ><img src="./img/icon_github.svg" alt=""
+              <a
+                href="https://github.com/statictype"
+                aria-label="GitHub profile"
+                ><img src="./img/icon_github.svg" alt="GitHub"
               /></a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/andreea-eftene-06747a127/"
-                ><img src="./img/icon_linkedin.svg" alt=""
+              <a
+                href="https://www.linkedin.com/in/andreea-eftene-06747a127/"
+                aria-label="LinkedIn profile"
+                ><img src="./img/icon_linkedin.svg" alt="LinkedIn"
               /></a>
             </li>
             <li>
-              <a href=""><img src="./img/icon_email.svg" alt="" /></a>
+              <a href="mailto:hi@pixelle.ro" aria-label="Email link"
+                ><img src="./img/icon_email.svg" alt="Email"
+              /></a>
             </li>
           </ul>
         </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>
